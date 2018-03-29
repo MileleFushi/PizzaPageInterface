@@ -1,0 +1,231 @@
+body{
+    background-image: url(https://imageshack.com/a/img923/2275/K1bWZZ.jpg);
+    background-attachment: fixed;
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+}
+
+::-webkit-scrollbar {
+    background-color: white !important;
+    height: auto;
+    width: 14px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(23, 131, 81);
+    box-shadow: inset 0px 0px 6px #00522C;
+    height: auto;
+    width: 14px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#loginBar{
+    height: 45px;
+    background-color: #00522C;
+    box-shadow: 5px 10px 18px black;
+}
+
+#loginButton{
+    float: right;
+    margin-top: 5px;
+    margin-right: 20px;
+    font-size: 17px;
+    font-family: 'Lobster Two';
+    letter-spacing: 1px;
+    padding: 3px 8px 3px 8px;
+    box-shadow: 2px 4px 5px black;
+}
+
+.navImage{
+    display: inline-block;
+    margin: -190px 0px 0px 0px;
+    padding-left: 420px;
+}
+
+.logoImage{
+    display: inline-block;
+    margin: -200px 0px 0px -780px;
+}
+
+#behindBar{
+    height: 100px;
+    margin-top: 30%;
+    margin-bottom: 105px;
+    background-color: #00522C;
+    box-shadow: 5px 10px 18px black;
+
+}
+
+main{
+    margin: 140px 300px 0px 300px;
+    background-color: #00522C;
+    box-shadow: 0px 0px 25px black;
+    border-radius: 3%;
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+figure.caption{
+    position: relative;
+    font-family: 'Lobster';
+    letter-spacing: 2px;
+    color: white;
+    font-size: 75px;
+}
+
+figure.captionBehind{
+    position: relative;
+    font-family: 'Lobster';
+    letter-spacing: 2px;
+    color: #B31414;
+    font-size: 80px;
+}
+
+figure.caption#firstCaption{
+    margin-left: 136px;
+    margin-bottom: -44px;
+}
+figure.captionBehind#firstCaption{
+    margin-left: 122px;
+    margin-bottom: -110px;
+}
+
+figure.caption#secondCaption{
+    margin-left: 104px;
+    margin-bottom: -85px;
+}
+figure.captionBehind#secondCaption{
+    margin-left: 95px;
+    margin-bottom: -110px;
+}
+
+figure.caption#thirdCaption{
+    margin-left: 136px;
+    margin-bottom: -44px;
+}
+figure.captionBehind#thirdCaption{
+    margin-left: 122px;
+    margin-bottom: -110px;
+}
+
+#newsSection{
+    height: 400px;
+    overflow-y: scroll;
+    background-color: rgb(14, 161, 93);
+    -webkit-box-shadow: inset 0px 0px 12px black;
+    margin: 0px 100px 0px 100px;
+    
+}
+
+.newsArticle{
+    display: block;
+    margin: 50px 100px 50px 100px;
+    padding: 20px;
+    background-color: #00522C;
+    box-shadow: 0px 0px 12px black;
+
+}
+
+.squareArticleImage img{
+    float: left;
+    height: 280px;
+    width: 280px;
+    margin: 0px 20px 0px 0px;
+    background-color: white;
+    padding: 7px;
+    border: 1px solid black;
+}
+
+.newsArticle h1{
+    font-family: 'Lobster Two';
+    letter-spacing: 1px;
+    color: white;
+    font-size: 45px; 
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: -20px;
+}
+.newsArticle p{
+    font-family: 'PT Serif';
+    color: rgb(183, 228, 207);
+    font-size: 16px;
+}
+
+#articleMoreButton{
+    display: block;
+    float: right;
+    margin: -5px 63px 2px 10px;
+    font-family: 'PT Serif';
+    padding: 3px 8px 3px 8px;
+    box-shadow: 2px 4px 5px black;
+}
+
+#openingHoursSection{
+    display: block;
+    float: left;
+    width: 20%;
+    height: 200px;
+    background-color: rgb(14, 161, 93);
+    box-shadow: 0px 0px 12px black;
+    margin: 50px 50px 100px 100px;
+    padding: 20px;
+}
+
+#openingHoursSection p{
+    font-family: 'PT Serif';
+    color: rgb(183, 228, 207);
+    font-size: 16px;
+}
+
+#aboutUsSection{
+    display: block;
+    height: 300px;
+    width: 60%;
+    background-color: rgb(14, 161, 93);
+    box-shadow: 0px 0px 12px black;
+    margin: 6px 100px 100px 420px;
+    padding: 50px 20px 20px 20px;
+}
+
+#aboutUsSection h1{
+    font-family: 'Lobster Two';
+    letter-spacing: 1px;
+    color: white;
+    font-size: 45px; 
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: -20px;
+}
+
+#aboutUsSection p{
+    font-family: 'PT Serif';
+    color: rgb(183, 228, 207);
+    font-size: 16px;
+}
+
+footer figure#behindBar{
+    height: 100px;
+    margin-top: 200px;
+    margin-bottom: 5px;
+    background-color: #00522C;
+    box-shadow: 5px 10px 18px black;
+}
+
+footer #secondLogoImage{
+    display: inline-block;
+    margin: -160px 0px 0px 150px;
+}
+
+footer section{
+    color: rgb(49, 165, 111);
+    margin-top: -151px;
+    margin-left: 359px;
+}
+
+footer section p{
+    margin: 2px;
+    font-size: 12px;
+}
