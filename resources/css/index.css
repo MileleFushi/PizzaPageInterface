@@ -41,12 +41,14 @@ body{
 
 .navImage{
     display: inline-block;
+    cursor: pointer;
     margin: -190px 0px 0px 0px;
     padding-left: 420px;
 }
 
 .logoImage{
     display: inline-block;
+    cursor: pointer;
     margin: -200px 0px 0px -780px;
 }
 
