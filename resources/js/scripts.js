@@ -39,14 +39,14 @@ function autocomplete(inp, arr) {
         /*for each item in the array...*/
         for (i = 0; i < arr.length; i++) {
             /*check if the item starts with the same letters as the text field value:*/
-            if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+            if (arr[i].name.substr(0, val.length).toUpperCase() == val.toUpperCase()) {
                 /*create a DIV element for each matching element:*/
                 b = document.createElement("DIV");
                 /*make the matching letters bold:*/
-                b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
-                b.innerHTML += arr[i].substr(val.length);
+                b.innerHTML = "<strong>" + arr[i].name.substr(0, val.length) + "</strong>";
+                b.innerHTML += arr[i].name.substr(val.length);
                 /*insert a input field that will hold the current array item's value:*/
-                b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                b.innerHTML += "<input type='hidden' value='" + arr[i].name + "'>";
                 /*execute a function when someone clicks on the item value (DIV element):*/
                 b.addEventListener("click", function (e) {
                     /*insert the value for the autocomplete text field:*/
@@ -120,4 +120,98 @@ function autocomplete(inp, arr) {
 }
 
 /*An array containing all the country names in the world:*/
-var pizza = ["Margarita", "Mafioso", "Leonardo", "Hawai"];
+var pizza = {
+    pizza1: {
+        id: 1,
+        name: "Margarita",
+        photo: "http://img.koutipandoras.gr/unsafe/1000x500/smart/http://assets.koutipandoras.gr/kouti/imagegrid/2018/03/16/5aabd3571dc5243f338b4586.jpg",
+        lowerPrize: 20,
+        higherPrize: 27,
+        ingredients: [
+            "sos pomidorowy",
+            "ser",
+            "bazylia"
+        ]
+    },
+
+    pizza2: {
+        id: 2,
+        name: "Mafioso",
+        photo: "http://img.koutipandoras.gr/unsafe/1000x500/smart/http://assets.koutipandoras.gr/kouti/imagegrid/2018/03/16/5aabd3571dc5243f338b4586.jpg",
+        lowerPrize: 25,
+        higherPrize: 32,
+        ingredients: [
+            "sos pomidorowy",
+            "ser",
+            "jalapeno",
+            "czosnek",
+            "cebula",
+            "salami",
+            "bazylia",
+            "oregano"
+        ]
+    },
+
+    pizza3: {
+        id: 3,
+        name: "Leonardo",
+        photo: "http://img.koutipandoras.gr/unsafe/1000x500/smart/http://assets.koutipandoras.gr/kouti/imagegrid/2018/03/16/5aabd3571dc5243f338b4586.jpg",
+        lowerPrize: 28,
+        higherPrize: 36,
+        ingredients: [
+            "sos pomidorowy",
+            "ser",
+            "pieczarki",
+            "cebula",
+            "czosnek",
+            "salami",
+            "boczek",
+            "kielbasa",
+            "bazylia"
+        ]
+    },
+
+    pizza4: {
+        id: 4,
+        name: "Hawai",
+        photo: "http://img.koutipandoras.gr/unsafe/1000x500/smart/http://assets.koutipandoras.gr/kouti/imagegrid/2018/03/16/5aabd3571dc5243f338b4586.jpg",
+        lowerPrize: 24,
+        higherPrize: 31,
+        ingredients: [
+            "sos pomidorowy",
+            "ser",
+            "ananas",
+            "kukurydza",
+            "boczek",
+            "oregano"
+        ]
+    }
+};
+
+var pizzaList = [];
+
+// Populate pizza array
+for(var key in pizza) {
+    pizzaList.push(pizza[key]);
+    console.log(key);
+}
+
+autocomplete(document.getElementById('myPizza'), pizzaList);
+
+function showPizzaList(item, index){
+
+    console.log("Im in showPizzaList!");
+    document.getElementById('pizzaListUl').innerHTML = document.getElementById('pizzaListUl').innerHTML + 
+    "<li><span id='idSpan'>" + index +
+     "</span><span id='pizzaNameSpan'>" + item.name + "</span></li>";
+}
+
+function showSelectedPizza(){
+
+    var inputPizzaValue = document.getElementById('myPizza').value;
+    var selectedPizza = pizzaList.find(x => x.name === inputPizzaValue);
+    document.getElementById('pizzaListUl').innerHTML = "<li>" + selectedPizza.name + "</li>";
+}
+
+document.getElementById('searchButton').addEventListener('click', showSelectedPizza);
+document.body.addEventListener('load', pizzaList.forEach(showPizzaList));

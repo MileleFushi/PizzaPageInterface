@@ -7,14 +7,16 @@
 }
 
 #searchingSection{
-    position: relative;
+    position: absolute;
     background-color: rgb(5, 107, 59);
-    -webkit-box-shadow: outset 0px 0px 12px black;
-    width: 700px;
-    height: 100px;
+    width: 35%;
+    height: 80px;
+    padding: 14px 40px;
+    margin-top: -38px;
+    margin-left: 11%;
+    border-radius: 5px;
+    box-shadow: 0px 4px 12px black;
 }
-
-
 
 body {
     font: 16px Arial;
@@ -75,4 +77,16 @@ input[type=text] {
     /*when navigating through the items using the arrow keys:*/
     background-color: #FFA00C !important;
     color: #ffffff;
+}
+
+section#searchingResultSection{
+
+}
+
+section#searchingResultSection ul{
+    list-style-type: none;
+}
+
+section#searchingResultSection li{
+    
 }
