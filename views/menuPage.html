@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../resources/css/index.css">
     <link rel="stylesheet" href="../resources/css/menuPage.css">
-    
+
     <link href="https://fonts.googleapis.com/css?family=Lobster+Two|Lobster|PT+Serif" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
@@ -17,6 +17,7 @@
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+    <link href='http://fonts.googleapis.com/css?family=Almendra&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <title>Pizzeria</title>
 </head>
 
@@ -30,23 +31,20 @@
             <figure id="behindBar">
                 <figure class="navImage" id="menuPageImage">
                     <a href="menuPage.html">
-                        <img onmousedown="setAfterButtonClick()" onmouseover="this.src='https://imageshack.com/a/img923/4627/v7Y89W.png'"
-                            onmouseout="this.src='https://imageshack.com/a/img922/9067/4Iyn6T.png'" src="https://imageshack.com/a/img922/9067/4Iyn6T.png"
-                        />
+                        <img onmousedown="setAfterButtonClick()" onmouseover="this.src='https://imageshack.com/a/img923/4627/v7Y89W.png'" onmouseout="this.src='https://imageshack.com/a/img922/9067/4Iyn6T.png'"
+                            src="https://imageshack.com/a/img922/9067/4Iyn6T.png" />
                     </a>
                 </figure>
                 <figure class="navImage" id="contactPageImage">
                     <a href="contactPage.html">
-                        <img onmousedown="setAfterButtonClick()" onmouseover="this.src='https://imageshack.com/a/img924/6415/uhYTAw.png'"
-                            onmouseout="this.src='https://imageshack.com/a/img924/2503/LfzF6g.png'" src="https://imageshack.com/a/img924/2503/LfzF6g.png"
-                        />
+                        <img onmousedown="setAfterButtonClick()" onmouseover="this.src='https://imageshack.com/a/img924/6415/uhYTAw.png'" onmouseout="this.src='https://imageshack.com/a/img924/2503/LfzF6g.png'"
+                            src="https://imageshack.com/a/img924/2503/LfzF6g.png" />
                     </a>
                 </figure>
                 <figure class="logoImage" id="firstLogoImage">
                     <a href="index.html">
-                        <img onmousedown="setAfterButtonClick()" onmouseover="this.src='https://imageshack.com/a/img923/9097/xFjbx3.png'"
-                            onmouseout="this.src='https://imageshack.com/a/img924/7897/Ye9Bm5.png'" src="https://imageshack.com/a/img924/7897/Ye9Bm5.png"
-                        />
+                        <img onmousedown="setAfterButtonClick()" onmouseover="this.src='https://imageshack.com/a/img923/9097/xFjbx3.png'" onmouseout="this.src='https://imageshack.com/a/img924/7897/Ye9Bm5.png'"
+                            src="https://imageshack.com/a/img924/7897/Ye9Bm5.png" />
                     </a>
                 </figure>
             </figure>
@@ -55,22 +53,48 @@
     </header>
 
     <main>
-        <section id="menuSection">
-
-            <section id="searchingSection">
-                    <div class="autocomplete" style="width:500px;">
-                        <input id="myPizza" type="text" name="myPizza" placeholder="Wpisz nazwę pizzy..." >
-                    </div>
-                    <input id="searchButton" class="btn btn-success" type="button"/>
-            </section>
+        <section id="mainSection">
+            <figure class="captionBehind" id="secondCaption">Nasze menu</figure>
+            <figure class="caption" id="secondCaption">Nasze menu</figure>
             
-            <section id="searchingResultSection">
+            <section id="menuSection">
 
-                <ul id="pizzaListUl">
-                </ul>
+                <section id="searchingSection">
+                    <div class="autocomplete" style="width:500px;">
+                        <input id="myPizza" type="text" name="myPizza" placeholder="Wpisz nazwę pizzy..." />
+                    </div>
+                    <input id="searchButton" class="btn btn-success" type="button" />
+                </section>
+
+                <section id="pizzaFilterSection" class="one-edge-shadow">
+                    <span>
+                        <input type="checkbox">Mięso</span>
+                    <span>
+                        <input type="checkbox">Owoce</span>
+                    <span>
+                        <input type="checkbox">Warzywa</span>
+                    <span>
+                        <input type="checkbox">Bazylia</span>
+                    <span>
+                        <input type="checkbox">Oregano</span>
+                </section>
+
+                <section id="titlesSection">
+                    <span id="lpTitleSpan">L.p.</span>
+                    <span id="nameTitleSpan">Nazwa pizzy</span>
+                    <span id="lowerTitleSpan">⌀</span>
+                    <span id="higherTitleSpan">∅</span>
+                </section>
+
+                <section id="searchingResultSection">
+
+                    <ul id="pizzaListUl">
+
+                    </ul>
+                </section>
+
+                <p id="allCostP">Łącznie do zapłaty: <span id="allCostSpan"></span></p>
             </section>
-
-
         </section>
     </main>
 

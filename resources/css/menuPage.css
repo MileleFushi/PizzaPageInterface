@@ -1,14 +1,13 @@
 #menuSection {
     height: 400px;
-    overflow-y: scroll;
     background-color: rgb(14, 161, 93);
-    -webkit-box-shadow: inset 0px 0px 12px black;
-    margin: 0px 100px 0px 100px;
+    box-shadow: inset 0 0 12px #000000;
+    margin: 130px 100px 0px 100px;
 }
 
-#searchingSection{
+#searchingSection {
     position: absolute;
-    background-color: rgb(5, 107, 59);
+    background-color: rgb(6, 94, 52);
     width: 35%;
     height: 80px;
     padding: 14px 40px;
@@ -16,10 +15,46 @@
     margin-left: 11%;
     border-radius: 5px;
     box-shadow: 0px 4px 12px black;
+    
 }
 
-body {
-    font: 16px Arial;
+* {
+    font-family: 'Almendra', sans-serif;
+}
+
+figure.caption{
+    position: relative;
+    font-family: 'Lobster';
+    letter-spacing: 2px;
+    color: white;
+    font-size: 75px;
+}
+
+figure.captionBehind{
+    position: relative;
+    font-family: 'Lobster';
+    letter-spacing: 2px;
+    color: #B31414;
+    font-size: 80px;
+}
+
+figure.caption#secondCaption{
+    margin-left: 104px;
+    margin-bottom: -85px;
+}
+figure.captionBehind#secondCaption{
+    margin-left: 95px;
+    margin-bottom: -110px;
+    margin-top: -236px;
+}
+
+section#mainSection{
+    padding-bottom: 100px;
+    padding-top: 160px;
+    margin-top: 40px;
+    background-color: rgb(10, 111, 63);
+    margin-left: 3%;
+    margin-right: 3%;
 }
 
 .autocomplete {
@@ -39,14 +74,19 @@ input {
 input[type=text] {
     background-color: #f1f1f1;
     width: 100%;
+    font-size: 23px;
+    padding: 7px;
 }
 
 #searchButton {
     background: url(../img/icoSearch.png);
-    height: 47px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 54px;
     width: 80px;
     cursor: pointer;
-    top: 0px;
+    background-color: orange;
+    margin-top: -4px;
 }
 
 .autocomplete-items {
@@ -79,14 +119,139 @@ input[type=text] {
     color: #ffffff;
 }
 
-section#searchingResultSection{
-
+section#pizzaFilterSection {
+    background-color: #FFA00C;
+    height: 100px;
+    padding-top: 60px;
+    padding-left: 15%;
 }
 
-section#searchingResultSection ul{
+.one-edge-shadow {
+    -webkit-box-shadow: inset 0 3 8px 6px -6px black;
+    -moz-box-shadow: inset 0 3 8px 6px -6px black;
+    box-shadow: inset 0 3 8px 6px -6px black;
+
+    -webkit-box-shadow: 2 8px 6px -6px black;
+    -moz-box-shadow: 2 8px 6px -6px black;
+    box-shadow: 2 8px 6px -6px black;
+}
+
+section#pizzaFilterSection span {
+    margin-right: 10%;
+    font-size: 20px;
+
+}
+section#searchingResultSection ul {
     list-style-type: none;
+    margin: 25px 5%;
+    padding-left: 0px;
 }
 
-section#searchingResultSection li{
-    
+section#titlesSection{
+    background-color: #ffdfc0;
+    font-size: 20px;
+}
+
+section#titlesSection span#lpTitleSpan{
+    margin-left: 7%;
+}
+
+section#titlesSection span#nameTitleSpan{
+    margin-left: 6%;
+}
+
+section#titlesSection span#lowerTitleSpan{
+    margin-left: 56%;
+}
+
+section#titlesSection span#higherTitleSpan{
+    margin-left: 3%;
+}
+
+section#searchingResultSection li {
+    background-color: #ffdfc0;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+section#searchingResultSection p{
+    display: inline-block;
+}
+
+section#searchingResultSection p#idP{
+    font-size: 81px;
+    margin: -32px 10px;
+    height: 75px;
+    width: 90px;
+}
+
+section#nameAndIngSection{
+    display: inline-block;
+    height: 50px;
+    width: 49%;
+    position: relative;
+}
+
+section#searchingResultSection{
+    overflow-y: auto;
+    height: 269px;
+}
+
+section#searchingResultSection p#nameP{
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 0px;
+    margin-right: 5px;
+}
+
+section#searchingResultSection p#ingredientsP{
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 0px;
+}
+
+section#searchingResultSection button{
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    position: relative;
+    top: -12px;
+    margin-left: 12%;
+    background: url(http://imageshack.com/a/img922/2899/SjbW53.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    background-color: orange;
+}
+
+section#searchingResultSection input[type=number]{
+    overflow: visible;
+    height: 10px;
+    width: 49px;
+    padding-right: 0px;
+    padding-left: 5px;
+    font-size: 20px;
+    padding-bottom: 13px;
+    margin-left: -5.5%;
+    border: 1px solid green;
+}
+
+p#lowerP{
+    margin-left: 6%;
+}
+
+section#searchingResultSection p.prizeP{
+    margin-top: -7px;
+    margin-bottom: 0px;
+    margin-left: 1%;
+    font-size: 23px;
+    width: 50px;
+    text-align: center;
+    position: relative;
+    top: -27px;
+}
+
+p#allCostP{
+    font-size: 30px;
+    color: white;
 }

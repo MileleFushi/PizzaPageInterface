@@ -75,6 +75,10 @@ function autocomplete(inp, arr) {
             currentFocus--;
             /*and and make the current item more visible:*/
             addActive(x);
+        } else if (e.keyCode == 8) { //backspace
+            document.getElementById('pizzaListUl').innerHTML = "";
+            indexOfPizzaItem = 0;
+            pizzaList.forEach(showPizzaList);
         } else if (e.keyCode == 13) {
             /*If the ENTER key is pressed, prevent the form from being submitted,*/
             e.preventDefault();
@@ -82,6 +86,8 @@ function autocomplete(inp, arr) {
                 /*and simulate a click on the "active" item:*/
                 if (x) x[currentFocus].click();
             }
+            document.getElementById('searchButton').click();
+            indexOfPizzaItem = 0;
         }
     });
 
@@ -193,25 +199,118 @@ var pizzaList = [];
 // Populate pizza array
 for(var key in pizza) {
     pizzaList.push(pizza[key]);
-    console.log(key);
+    
 }
 
 autocomplete(document.getElementById('myPizza'), pizzaList);
+var indexOfPizzaItem = 0;
 
 function showPizzaList(item, index){
 
-    console.log("Im in showPizzaList!");
     document.getElementById('pizzaListUl').innerHTML = document.getElementById('pizzaListUl').innerHTML + 
-    "<li><span id='idSpan'>" + index +
-     "</span><span id='pizzaNameSpan'>" + item.name + "</span></li>";
+    "<li><p id='idP'>" + item.id + ".</p><section id='nameAndIngSection'><p id='nameP'>" + item.name + "</p>" +
+    "<span id='ingredientsP'>" + 
+    getIngList(item.ingredients) +
+    "</span></section><button class='btn btn-success' type='button'></button><p id='lowerPrizeP"+indexOfPizzaItem+"' class='prizeP'>" +
+    item.lowerPrize + " zł</p><input id='lowerInput"+indexOfPizzaItem+"' class='amountLowerInput' type='number' placeholder='szt.' step='1' min='0' /></p>" +
+    "<p id='higherPrizeP"+indexOfPizzaItem+"' class='prizeP'>" + item.higherPrize +" zł</p><input id='higherInput"+indexOfPizzaItem+"' class='amountHigherInput'" + 
+    " type='number' placeholder='szt.' step='1' min='0' /></p></li>";
+
+    indexOfPizzaItem++;
+
+    function getIngList(array){
+
+        var ingList = "";
+        for(var i = 0; i < array.length; i++){
+            ingList += array[i] + ", ";
+        }
+        return ingList;
+    }
 }
 
 function showSelectedPizza(){
 
     var inputPizzaValue = document.getElementById('myPizza').value;
     var selectedPizza = pizzaList.find(x => x.name === inputPizzaValue);
-    document.getElementById('pizzaListUl').innerHTML = "<li>" + selectedPizza.name + "</li>";
+
+    document.getElementById('pizzaListUl').innerHTML = 
+    "<li><p id='idP'>" + selectedPizza.id + ".</p><section id='nameAndIngSection'><p id='nameP'>" + selectedPizza.name + "</p>" +
+    "<span id='ingredientsP'>" + 
+    getIngList(selectedPizza.ingredients) +
+    "</span></section><button class='btn btn-success' type='button'></button><p id='lowerPrizeP"+indexOfPizzaItem+"' class='prizeP'>" +
+    selectedPizza.lowerPrize + " zł</p><input id='lowerInput"+indexOfPizzaItem+"' class='amountLowerInput' type='number' placeholder='szt.' step='1' min='0' /></p>" +
+    "<p id='higherPrizeP"+indexOfPizzaItem+"' class='prizeP'>" + selectedPizza.higherPrize +" zł</p><input id='higherInput"+indexOfPizzaItem+"' class='amountHigherInput'" + 
+    " type='number' placeholder='szt.' step='1' min='0' /></p></li>";
+
+    indexOfPizzaItem++;
+
+    function getIngList(array){
+
+        var ingList = "";
+        for(var i = 0; i < array.length; i++){
+            ingList += array[i] + ", ";
+        }
+        return ingList;
+    }
+}
+
+var billCost = 0;
+
+for(var i = 0; i<iterator/2; i++){
+    var name1 = "jumpLOW" + i;
+    sessionStorage.setItem(name1, 0);
+    var name2 = "jumpHIGH" + i;
+    sessionStorage.setItem(name2, 0);
+}
+
+function sumBill(){
+
+    var idCurrentElement = this.id + "";
+    var idCurrent = idCurrentElement.slice(idCurrentElement.length-1);
+
+
+    if(this.getAttribute('class') == 'amountLowerInput'){
+
+        var idCurrentInput = this.id + "";
+        var idCurrentP = "lowerPrizeP" + idCurrentInput.slice(idCurrentInput.length-1);
+        var prize = document.getElementById(idCurrentP).innerHTML.substring(0, document.getElementById(idCurrentP).innerHTML.length - 3);
+        var nameOfJump = "jumpLOW" + idCurrentElement.slice(idCurrentElement.length-1);
+        console.log(nameOfJump);
+
+        if(this.value > sessionStorage.getItem(nameOfJump)){
+            billCost += parseInt(prize);
+            sessionStorage.setItem(nameOfJump, this.value);
+        }else{
+            billCost -= parseInt(prize);
+            sessionStorage.setItem(nameOfJump, this.value);
+        }
+    }
+    else if(this.getAttribute('class') == 'amountHigherInput'){
+        var idCurrentInput = this.id + "";
+        var idCurrentP = "higherPrizeP" + idCurrentInput.slice(idCurrentInput.length-1);
+        var prize = document.getElementById(idCurrentP).innerHTML.substring(0, document.getElementById(idCurrentP).innerHTML.length - 3);
+        var nameOfJump = "jumpHIGH" + idCurrentElement.slice(idCurrentElement.length-1);
+        console.log(nameOfJump);
+
+        if(this.value > sessionStorage.getItem(nameOfJump)){
+            billCost += parseInt(prize);
+            sessionStorage.setItem(nameOfJump, this.value);
+        }else{
+            billCost -= parseInt(prize);
+            sessionStorage.setItem(nameOfJump, this.value);
+        }
+    }
+    
+    document.getElementById('allCostSpan').innerHTML = billCost;
 }
 
 document.getElementById('searchButton').addEventListener('click', showSelectedPizza);
 document.body.addEventListener('load', pizzaList.forEach(showPizzaList));
+var listOfInputs1 = document.getElementsByClassName('amountLowerInput');
+var listOfInputs2 = document.getElementsByClassName('amountHigherInput');
+var iterator;
+
+for(iterator = 0; iterator < listOfInputs1.length; iterator++){
+    listOfInputs1[iterator].addEventListener('input', sumBill);
+    listOfInputs2[iterator].addEventListener('input', sumBill);
+}

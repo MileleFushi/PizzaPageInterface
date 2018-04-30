@@ -118,6 +118,7 @@ figure.captionBehind#thirdCaption{
     overflow-y: scroll;
     background-color: rgb(14, 161, 93);
     -webkit-box-shadow: inset 0px 0px 12px black;
+    box-shadow: 0px 0px 12px black;
     margin: 0px 100px 0px 100px;
     
 }
