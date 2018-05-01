@@ -1,5 +1,5 @@
 #menuSection {
-    height: 400px;
+    height: 500px;
     background-color: rgb(14, 161, 93);
     box-shadow: inset 0 0 12px #000000;
     margin: 130px 100px 0px 100px;
@@ -161,11 +161,11 @@ section#titlesSection span#nameTitleSpan{
 }
 
 section#titlesSection span#lowerTitleSpan{
-    margin-left: 56%;
+    margin-left: 55%;
 }
 
 section#titlesSection span#higherTitleSpan{
-    margin-left: 3%;
+    margin-left: 4%;
 }
 
 section#searchingResultSection li {
@@ -194,7 +194,7 @@ section#nameAndIngSection{
 
 section#searchingResultSection{
     overflow-y: auto;
-    height: 269px;
+    height: 367px;
 }
 
 section#searchingResultSection p#nameP{
@@ -217,6 +217,7 @@ section#searchingResultSection button{
     position: relative;
     top: -12px;
     margin-left: 12%;
+    margin-right: 5%;
     background: url(http://imageshack.com/a/img922/2899/SjbW53.png);
     background-position: center center;
     background-repeat: no-repeat;
@@ -253,5 +254,10 @@ section#searchingResultSection p.prizeP{
 
 p#allCostP{
     font-size: 30px;
-    color: white;
+    color: #e9e9e9;
+    margin-top: 20px;
+}
+
+span#allCostSpan{
+    font-size: 40px;
 }

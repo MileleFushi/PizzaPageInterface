@@ -1,4 +1,5 @@
 function startAtMiddlePage(x, y) {
+    zeroSession();
 
     function more() {
         if (x > y) {
@@ -197,57 +198,64 @@ var pizza = {
 var pizzaList = [];
 
 // Populate pizza array
-for(var key in pizza) {
+for (var key in pizza) {
     pizzaList.push(pizza[key]);
-    
+
 }
 
 autocomplete(document.getElementById('myPizza'), pizzaList);
 var indexOfPizzaItem = 0;
 
-function showPizzaList(item, index){
+function showPizzaList(item, index) {
 
-    document.getElementById('pizzaListUl').innerHTML = document.getElementById('pizzaListUl').innerHTML + 
-    "<li><p id='idP'>" + item.id + ".</p><section id='nameAndIngSection'><p id='nameP'>" + item.name + "</p>" +
-    "<span id='ingredientsP'>" + 
-    getIngList(item.ingredients) +
-    "</span></section><button class='btn btn-success' type='button'></button><p id='lowerPrizeP"+indexOfPizzaItem+"' class='prizeP'>" +
-    item.lowerPrize + " zł</p><input id='lowerInput"+indexOfPizzaItem+"' class='amountLowerInput' type='number' placeholder='szt.' step='1' min='0' /></p>" +
-    "<p id='higherPrizeP"+indexOfPizzaItem+"' class='prizeP'>" + item.higherPrize +" zł</p><input id='higherInput"+indexOfPizzaItem+"' class='amountHigherInput'" + 
-    " type='number' placeholder='szt.' step='1' min='0' /></p></li>";
+    document.getElementById('pizzaListUl').innerHTML = document.getElementById('pizzaListUl').innerHTML +
+        "<li><p id='idP'>" + item.id + ".</p><section id='nameAndIngSection'><p id='nameP'>" + item.name + "</p>" +
+        "<span id='ingredientsP'>" +
+        getIngList(item.ingredients) +
+        "</span></section><button class='btn btn-success' type='button'></button><p id='lowerPrizeP" + indexOfPizzaItem + "' class='prizeP'>" +
+        item.lowerPrize + " zł</p><input id='lowerInput" + indexOfPizzaItem + "' class='amountLowerInput' type='number' placeholder='szt.' step='1' min='0' value='" + sessionStorage.getItem('jumpLOW' + indexOfPizzaItem + '') + "' /></p>" +
+        "<p id='higherPrizeP" + indexOfPizzaItem + "' class='prizeP'>" + item.higherPrize + " zł</p><input id='higherInput" + indexOfPizzaItem + "' class='amountHigherInput'" +
+        " type='number' placeholder='szt.' step='1' min='0' value='" + sessionStorage.getItem('jumpHIGH' + indexOfPizzaItem + '') + "' /></p></li>";
 
     indexOfPizzaItem++;
 
-    function getIngList(array){
+    function getIngList(array) {
 
         var ingList = "";
-        for(var i = 0; i < array.length; i++){
+        for (var i = 0; i < array.length; i++) {
             ingList += array[i] + ", ";
         }
         return ingList;
     }
 }
 
-function showSelectedPizza(){
+function showSelectedPizza() {
+
+    var listOfInputs3 = document.getElementsByClassName('amountLowerInput');
+    var listOfInputs4 = document.getElementsByClassName('amountHigherInput');
+
+    for (var iterator = 0; iterator < listOfInputs3.length; iterator++) {
+        listOfInputs3[iterator].addEventListener('input', sumBill);
+        listOfInputs4[iterator].addEventListener('input', sumBill);
+    }
 
     var inputPizzaValue = document.getElementById('myPizza').value;
     var selectedPizza = pizzaList.find(x => x.name === inputPizzaValue);
 
-    document.getElementById('pizzaListUl').innerHTML = 
-    "<li><p id='idP'>" + selectedPizza.id + ".</p><section id='nameAndIngSection'><p id='nameP'>" + selectedPizza.name + "</p>" +
-    "<span id='ingredientsP'>" + 
-    getIngList(selectedPizza.ingredients) +
-    "</span></section><button class='btn btn-success' type='button'></button><p id='lowerPrizeP"+indexOfPizzaItem+"' class='prizeP'>" +
-    selectedPizza.lowerPrize + " zł</p><input id='lowerInput"+indexOfPizzaItem+"' class='amountLowerInput' type='number' placeholder='szt.' step='1' min='0' /></p>" +
-    "<p id='higherPrizeP"+indexOfPizzaItem+"' class='prizeP'>" + selectedPizza.higherPrize +" zł</p><input id='higherInput"+indexOfPizzaItem+"' class='amountHigherInput'" + 
-    " type='number' placeholder='szt.' step='1' min='0' /></p></li>";
+    document.getElementById('pizzaListUl').innerHTML = "<li><p id='idP'>" + selectedPizza.id + ".</p><section id='nameAndIngSection'><p id='nameP'>" + selectedPizza.name + "</p>" +
+        "<span id='ingredientsP'>" +
+        getIngList(selectedPizza.ingredients) +
+        "</span></section><button class='btn btn-success' type='button'></button><p id='lowerPrizeP" + indexOfPizzaItem + "' class='prizeP'>" +
+        selectedPizza.lowerPrize + " zł</p><input id='lowerInput" + indexOfPizzaItem + "' class='amountLowerInput' type='number' placeholder='szt.' step='1' min='0' value='" + sessionStorage.getItem('jumpLOW' + indexOfPizzaItem + '') + "' /></p>" +
+        "<p id='higherPrizeP" + indexOfPizzaItem + "' class='prizeP'>" + selectedPizza.higherPrize + " zł</p><input id='higherInput" + indexOfPizzaItem + "' class='amountHigherInput'" +
+        " type='number' placeholder='szt.' step='1' min='0' value='" + sessionStorage.getItem('jumpHIGH' + indexOfPizzaItem + '') + "' /></p></li>";
 
     indexOfPizzaItem++;
 
-    function getIngList(array){
+    function getIngList(array) {
 
         var ingList = "";
-        for(var i = 0; i < array.length; i++){
+        for (var i = 0; i < array.length; i++) {
             ingList += array[i] + ", ";
         }
         return ingList;
@@ -256,52 +264,65 @@ function showSelectedPizza(){
 
 var billCost = 0;
 
-for(var i = 0; i<iterator/2; i++){
-    var name1 = "jumpLOW" + i;
-    sessionStorage.setItem(name1, 0);
-    var name2 = "jumpHIGH" + i;
-    sessionStorage.setItem(name2, 0);
+function zeroSession() {
+
+    for (var i = 0; i < iterator; i++) {
+        var name1 = "jumpLOW" + i;
+        sessionStorage.setItem(name1, 0);
+        var name2 = "jumpHIGH" + i;
+        sessionStorage.setItem(name2, 0);
+    }
 }
 
-function sumBill(){
+function sumBill() {
 
     var idCurrentElement = this.id + "";
-    var idCurrent = idCurrentElement.slice(idCurrentElement.length-1);
+    var idCurrent = idCurrentElement.slice(idCurrentElement.length - 1);
+    console.log("sumBill fired!");
 
-
-    if(this.getAttribute('class') == 'amountLowerInput'){
+    if (this.getAttribute('class') == 'amountLowerInput') {
 
         var idCurrentInput = this.id + "";
-        var idCurrentP = "lowerPrizeP" + idCurrentInput.slice(idCurrentInput.length-1);
+        var idCurrentP = "lowerPrizeP" + idCurrentInput.slice(idCurrentInput.length - 1);
         var prize = document.getElementById(idCurrentP).innerHTML.substring(0, document.getElementById(idCurrentP).innerHTML.length - 3);
-        var nameOfJump = "jumpLOW" + idCurrentElement.slice(idCurrentElement.length-1);
+        var nameOfJump = "jumpLOW" + idCurrentElement.slice(idCurrentElement.length - 1);
         console.log(nameOfJump);
 
-        if(this.value > sessionStorage.getItem(nameOfJump)){
+        if (this.value > sessionStorage.getItem(nameOfJump)) {
             billCost += parseInt(prize);
             sessionStorage.setItem(nameOfJump, this.value);
-        }else{
+        } else {
+            billCost -= parseInt(prize);
+            sessionStorage.setItem(nameOfJump, this.value);
+        }
+    } else if (this.getAttribute('class') == 'amountHigherInput') {
+        var idCurrentInput = this.id + "";
+        var idCurrentP = "higherPrizeP" + idCurrentInput.slice(idCurrentInput.length - 1);
+        var prize = document.getElementById(idCurrentP).innerHTML.substring(0, document.getElementById(idCurrentP).innerHTML.length - 3);
+        var nameOfJump = "jumpHIGH" + idCurrentElement.slice(idCurrentElement.length - 1);
+        console.log(nameOfJump);
+
+        if (this.value > sessionStorage.getItem(nameOfJump)) {
+            billCost += parseInt(prize);
+            sessionStorage.setItem(nameOfJump, this.value);
+        } else {
             billCost -= parseInt(prize);
             sessionStorage.setItem(nameOfJump, this.value);
         }
     }
-    else if(this.getAttribute('class') == 'amountHigherInput'){
-        var idCurrentInput = this.id + "";
-        var idCurrentP = "higherPrizeP" + idCurrentInput.slice(idCurrentInput.length-1);
-        var prize = document.getElementById(idCurrentP).innerHTML.substring(0, document.getElementById(idCurrentP).innerHTML.length - 3);
-        var nameOfJump = "jumpHIGH" + idCurrentElement.slice(idCurrentElement.length-1);
-        console.log(nameOfJump);
 
-        if(this.value > sessionStorage.getItem(nameOfJump)){
-            billCost += parseInt(prize);
-            sessionStorage.setItem(nameOfJump, this.value);
-        }else{
-            billCost -= parseInt(prize);
-            sessionStorage.setItem(nameOfJump, this.value);
-        }
+    document.getElementById('allCostSpan').innerHTML = billCost + " zł";
+}
+
+function filterByCheckbox() {
+    console.log("filterByCheckbox fired!");
+
+    if (this.checked) {
+        // Checkbox is checked..
+    } else {
+        // Checkbox is not checked..
     }
-    
-    document.getElementById('allCostSpan').innerHTML = billCost;
+
 }
 
 document.getElementById('searchButton').addEventListener('click', showSelectedPizza);
@@ -310,7 +331,11 @@ var listOfInputs1 = document.getElementsByClassName('amountLowerInput');
 var listOfInputs2 = document.getElementsByClassName('amountHigherInput');
 var iterator;
 
-for(iterator = 0; iterator < listOfInputs1.length; iterator++){
+for (iterator = 0; iterator < listOfInputs1.length; iterator++) {
     listOfInputs1[iterator].addEventListener('input', sumBill);
     listOfInputs2[iterator].addEventListener('input', sumBill);
 }
+
+var listOfCheckboxes = document.querySelector("input[type=checkbox]");
+
+listOfCheckboxes.addEventListener('change', filterByCheckbox);
