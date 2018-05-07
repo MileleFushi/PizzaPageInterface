@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../resources/css/index.css">
-    <script src="../resources/js/scripts.js"></script>
+    <link rel="stylesheet" href="../resources/css/orderPage.css">
     <link href="https://fonts.googleapis.com/css?family=Lobster+Two|Lobster|PT+Serif" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
@@ -19,7 +18,7 @@
     <title>Pizzeria</title>
 </head>
 
-<body>
+<body onload="startAtMiddlePage(0, 360)">
     <header>
         <nav id="loginBar">
             <button id="loginButton" type="button" class="btn btn-success">Panel administracyjny</button>
@@ -28,13 +27,22 @@
         <nav="navigationBar">
             <figure id="behindBar">
                 <figure class="navImage" id="menuPageImage">
-                    <a href="menuPage.html"><img onmouseover="this.src='https://imageshack.com/a/img923/4627/v7Y89W.png'" onmouseout="this.src='https://imageshack.com/a/img922/9067/4Iyn6T.png'" src="https://imageshack.com/a/img922/9067/4Iyn6T.png" /></a>
+                    <a href="menuPage.html">
+                        <img onmouseover="this.src='https://imageshack.com/a/img923/4627/v7Y89W.png'" onmouseout="this.src='https://imageshack.com/a/img922/9067/4Iyn6T.png'"
+                            src="https://imageshack.com/a/img922/9067/4Iyn6T.png" />
+                    </a>
                 </figure>
                 <figure class="navImage" id="contactPageImage">
-                    <a href="contactPage.html"><img onmouseover="this.src='https://imageshack.com/a/img924/6415/uhYTAw.png'" onmouseout="this.src='https://imageshack.com/a/img924/2503/LfzF6g.png'" src="https://imageshack.com/a/img924/2503/LfzF6g.png" /></a>
+                    <a href="contactPage.html">
+                        <img onmouseover="this.src='https://imageshack.com/a/img924/6415/uhYTAw.png'" onmouseout="this.src='https://imageshack.com/a/img924/2503/LfzF6g.png'"
+                            src="https://imageshack.com/a/img924/2503/LfzF6g.png" />
+                    </a>
                 </figure>
                 <figure class="logoImage" id="firstLogoImage">
-                    <a href="index.html"><img onmouseover="this.src='https://imageshack.com/a/img923/9097/xFjbx3.png'" onmouseout="this.src='https://imageshack.com/a/img924/7897/Ye9Bm5.png'" src="https://imageshack.com/a/img924/7897/Ye9Bm5.png" /></a>
+                    <a href="index.html">
+                        <img onmouseover="this.src='https://imageshack.com/a/img923/9097/xFjbx3.png'" onmouseout="this.src='https://imageshack.com/a/img924/7897/Ye9Bm5.png'"
+                            src="https://imageshack.com/a/img924/7897/Ye9Bm5.png" />
+                    </a>
                 </figure>
             </figure>
 
@@ -42,7 +50,114 @@
     </header>
 
     <main>
-        orderPage
+        <section id="mainSection">
+            <figure class="captionBehind" id="firstCaption">Twoje zamówienie</figure>
+            <figure class="caption" id="firstCaption">Twoje zamówienie</figure>
+
+            <section id="orderListSection">
+                <table>
+                    <tr>
+                        <th>Pizza</th>
+                        <th>Rozmiar</th>
+                        <th>Ilość</th>
+                        <th>Cena</th>
+                    </tr>
+                    <tr>
+                        <td>Margarita</td>
+                        <td>Duża</td>
+                        <td>1 szt.</td>
+                        <td>20 zł</td>
+                    </tr>
+                    <tr>
+                        <td>Margarita</td>
+                        <td>Średnia</td>
+                        <td>2 szt.</td>
+                        <td>15 zł</td>
+                    </tr>
+                    <tr>
+                        <td>Hawai</td>
+                        <td>Duża</td>
+                        <td>2 szt.</td>
+                        <td>35 zł</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>Razem:</b>
+                        </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>
+                            <b>120 zł</b>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+
+            <figure class="captionBehind" id="secondCaption">Komentarz</figure>
+            <figure class="caption" id="secondCaption">Komentarz</figure>
+
+            <section id="commentSection">
+                <textarea id="commentTextArea" placeholder="Czy chciałbyś nam coś przekazać?"></textarea>
+            </section>
+
+            <figure class="captionBehind" id="thirdCaption">Szczegóły Twojego zamówienia</figure>
+            <figure class="caption" id="thirdCaption">Szczegóły Twojego zamówienia</figure>
+
+            <section id="formSection">
+
+                <div id="container">
+                    <form action="">
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="fname">Numer telefonu: </label>
+                            </div>
+                            <div class="col-75">
+                                <input type="text" id="fname" name="firstname" placeholder="Wpisz numer telefonu...">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="lname">Imię i nazwisko: </label>
+                            </div>
+                            <div class="col-75">
+                                <input type="text" id="lname" name="lastname" placeholder="Wpisz imię i nazwisko...">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="lstreet">Ulica: </label>
+                            </div>
+                            <div class="col-75">
+                                <input type="text" id="lstreet" name="street" placeholder="Wpisz nazwę ulicy...">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="lhousenumber">Nr domu: </label>
+                            </div>
+                            <div class="col-75">
+                                <input type="text" id="lhousenumber" name="housenumber" placeholder="Wpisz numer domu...">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="lapartamentnumber">Nr mieszkania: </label>
+                            </div>
+                            <div class="col-75">
+                                <input type="text" id="lapartamentnumber" name="apartamentnumber" placeholder="Wpisz numer mieszkania...">
+                            </div>
+                        </div>
+
+                        <input type="checkbox">
+                        <p id="checkboxP">Płatność kartą</p>
+                        </input>
+
+                        <button type="button" id="buyButton" class="btn btn-success">Zamów</button>
+                    </form>
+                </div>
+
+            </section>
+
     </main>
 
     <footer>
@@ -51,12 +166,15 @@
             <img id="secondLogoImage" src="https://imageshack.com/a/img924/2180/WE00gr.png" />
         </figure>
         <section>
-        <p>Designed by Mil Fushi - Małgorzata Zawisza</p>
-        <p>Politechnika Koszalińska 2018</p>
-        <p>Projekt interfejsu graficznego - Grzegorz Górski</p>
+            <p>Designed by Mil Fushi - Małgorzata Zawisza</p>
+            <p>Politechnika Koszalińska 2018</p>
+            <p>Projekt interfejsu graficznego - Grzegorz Górski</p>
         </section>
     </footer>
 
+
+    <script src="../resources/js/scripts.js"></script>
+    <script src="../resources/js/problematic-buttons-script.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,214 @@
+body{
+    background-image: url(https://imageshack.com/a/img923/2275/K1bWZZ.jpg);
+    background-attachment: fixed;
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+}
+
+section#mainSection{
+    padding-bottom: 150px;
+    padding-top: 160px;
+    margin-top: 40px;
+    background-color: rgb(10, 111, 63);
+    margin-left: 3%;
+    margin-right: 3%;
+    height: 1030px;
+}
+
+::-webkit-scrollbar {
+    background-color: white !important;
+    height: auto;
+    width: 14px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(23, 131, 81);
+    box-shadow: inset 0px 0px 6px #00522C;
+    height: auto;
+    width: 14px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#loginBar{
+    height: 45px;
+    background-color: #00522C;
+    box-shadow: 5px 10px 18px black;
+}
+
+#loginButton{
+    float: right;
+    margin-top: 5px;
+    margin-right: 20px;
+    font-size: 17px;
+    font-family: 'Lobster Two';
+    letter-spacing: 1px;
+    padding: 3px 8px 3px 8px;
+    box-shadow: 2px 4px 5px black;
+}
+
+.navImage{
+    display: inline-block;
+    cursor: pointer;
+    margin: -190px 0px 0px 0px;
+    padding-left: 420px;
+}
+
+.logoImage{
+    display: inline-block;
+    cursor: pointer;
+    margin: -200px 0px 0px -780px;
+}
+
+#behindBar{
+    height: 100px;
+    margin-top: 30%;
+    margin-bottom: 105px;
+    background-color: #00522C;
+    box-shadow: 5px 10px 18px black;
+
+}
+
+main{
+    margin: 140px 300px 0px 300px;
+    background-color: #00522C;
+    box-shadow: 0px 0px 25px black;
+    border-radius: 3%;
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+figure.caption{
+    position: relative;
+    font-family: 'Lobster';
+    letter-spacing: 2px;
+    color: white;
+    font-size: 75px;
+}
+
+figure.captionBehind{
+    position: relative;
+    font-family: 'Lobster';
+    letter-spacing: 2px;
+    color: #B31414;
+    font-size: 80px;
+}
+
+figure.caption#firstCaption{
+    margin-left: 166px;
+    margin-bottom: -44px;
+}
+figure.captionBehind#firstCaption{
+    margin-left: 152px;
+    margin-bottom: -110px;
+    margin-top: -170px;
+}
+
+figure.caption#secondCaption{
+    margin-left: 154px;
+    margin-bottom: -85px;
+}
+figure.captionBehind#secondCaption{
+    margin-left: 145px;
+    margin-bottom: -110px;
+}
+
+figure.caption#thirdCaption{
+    display: inline-block;
+    margin-left: 90px;
+    margin-bottom: -39px;
+    margin-top: 52px;
+    
+}
+figure.captionBehind#thirdCaption{
+    margin-left: 777px;
+    margin-bottom: -165px;
+    margin-top: -118px;
+}
+
+#mapSection{
+    display: block;
+    height: auto;
+    width: 80%;
+    background-color: rgb(14, 161, 93);
+    box-shadow: 0px 0px 12px black;
+    margin: 6px 100px 30px 11%;
+    padding: 50px 20px 20px 20px;
+}
+
+#mediaSection{
+    display: block;
+    float: left;
+    width: 42%;
+    height: 240px;
+    background-color: rgb(14, 161, 93);
+    box-shadow: 0px 0px 12px black;
+    margin: 50px 50px 100px 132px;
+    padding: 20px;
+    font-family: 'PT Serif';
+    color: rgb(209, 245, 228);
+    font-size: 22px;
+}
+
+#openingHoursSection{
+    display: block;
+    float: left;
+    width: 29%;
+    height: 240px;
+    background-color: rgb(14, 161, 93);
+    box-shadow: 0px 0px 12px black;
+    margin: -15px 50px 100px 64px;
+    padding: 20px;
+}
+
+#openingHoursSection p{
+    font-family: 'PT Serif';
+    color: rgb(209, 245, 228);
+    font-size: 20px;
+}
+
+
+
+footer figure#behindBar{
+    height: 100px;
+    margin-top: 200px;
+    margin-bottom: 5px;
+    background-color: #00522C;
+    box-shadow: 5px 10px 18px black;
+}
+
+footer #secondLogoImage{
+    display: inline-block;
+    margin: -160px 0px 0px 150px;
+}
+
+footer section{
+    color: rgb(49, 165, 111);
+    margin-top: -151px;
+    margin-left: 359px;
+}
+
+footer section p{
+    margin: 2px;
+    font-size: 12px;
+}
+
+/* CONTACTPAGE */
+
+img.mediaIcon{
+    height: 35px;
+    width: 35px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+}
+
+section#mediaSection a{
+    color: orange;
+}
+
+section#mediaSection a:hover{
+    color: rgb(177, 255, 216);
+    text-decoration: none;
+}

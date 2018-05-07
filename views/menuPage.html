@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../resources/css/index.css">
     <link rel="stylesheet" href="../resources/css/menuPage.css">
 
     <link href="https://fonts.googleapis.com/css?family=Lobster+Two|Lobster|PT+Serif" rel="stylesheet">
@@ -18,6 +17,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
     <link href='http://fonts.googleapis.com/css?family=Almendra&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href="../resources/css/lightbox.css" rel="stylesheet">
     <title>Pizzeria</title>
 </head>
 
@@ -66,7 +66,7 @@
                     <input id="searchButton" class="btn btn-success" type="button" />
                 </section>
 
-                <section id="pizzaFilterSection" class="one-edge-shadow">
+                <section id="pizzaFilterSection">
                     <span>
                         <input type="checkbox">Mięso</span>
                     <span>
@@ -94,6 +94,7 @@
                 </section>
 
                 <p id="allCostP">Łącznie do zapłaty: <span id="allCostSpan"></span></p>
+                <button type="button" id="buttonConfirm" class="btn btn-success" >Zamów</button>
             </section>
         </section>
     </main>
@@ -111,6 +112,7 @@
     </footer>
 
     <script src="../resources/js/scripts.js"></script>
+    <script src="../resources/js/lightbox-plus-jquery.js"></script>
 </body>
 
 </html>

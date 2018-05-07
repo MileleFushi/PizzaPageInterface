@@ -144,7 +144,7 @@ var pizza = {
     pizza2: {
         id: 2,
         name: "Mafioso",
-        photo: "http://img.koutipandoras.gr/unsafe/1000x500/smart/http://assets.koutipandoras.gr/kouti/imagegrid/2018/03/16/5aabd3571dc5243f338b4586.jpg",
+        photo: "http://cdn.foodnetworklatam.com/wp-content/uploads/2016/06/1465586619-Pizzas-exoticas.jpg",
         lowerPrize: 25,
         higherPrize: 32,
         ingredients: [
@@ -162,7 +162,7 @@ var pizza = {
     pizza3: {
         id: 3,
         name: "Leonardo",
-        photo: "http://img.koutipandoras.gr/unsafe/1000x500/smart/http://assets.koutipandoras.gr/kouti/imagegrid/2018/03/16/5aabd3571dc5243f338b4586.jpg",
+        photo: "http://radioportuense.com/wp-content/uploads/2018/01/Sem-T%C3%ADtulo-12.jpg",
         lowerPrize: 28,
         higherPrize: 36,
         ingredients: [
@@ -181,7 +181,7 @@ var pizza = {
     pizza4: {
         id: 4,
         name: "Hawai",
-        photo: "http://img.koutipandoras.gr/unsafe/1000x500/smart/http://assets.koutipandoras.gr/kouti/imagegrid/2018/03/16/5aabd3571dc5243f338b4586.jpg",
+        photo: "https://abasto.com/wp-content/uploads/2014/02/pizza-660x330.jpg",
         lowerPrize: 24,
         higherPrize: 31,
         ingredients: [
@@ -212,7 +212,7 @@ function showPizzaList(item, index) {
         "<li><p id='idP'>" + item.id + ".</p><section id='nameAndIngSection'><p id='nameP'>" + item.name + "</p>" +
         "<span id='ingredientsP'>" +
         getIngList(item.ingredients) +
-        "</span></section><button class='btn btn-success' type='button'></button><p id='lowerPrizeP" + indexOfPizzaItem + "' class='prizeP'>" +
+        "</span></section><a href='" + item.photo + "' data-lightbox='image-1' data-title='Pizza w naszej pizzeri! :)'><button class='btn btn-success' id='buttonPhoto' type='button'></button></a><p id='lowerPrizeP" + indexOfPizzaItem + "' class='prizeP'>" +
         item.lowerPrize + " zł</p><input id='lowerInput" + indexOfPizzaItem + "' class='amountLowerInput' type='number' placeholder='szt.' step='1' min='0' value='" + sessionStorage.getItem('jumpLOW' + indexOfPizzaItem + '') + "' /></p>" +
         "<p id='higherPrizeP" + indexOfPizzaItem + "' class='prizeP'>" + item.higherPrize + " zł</p><input id='higherInput" + indexOfPizzaItem + "' class='amountHigherInput'" +
         " type='number' placeholder='szt.' step='1' min='0' value='" + sessionStorage.getItem('jumpHIGH' + indexOfPizzaItem + '') + "' /></p></li>";
@@ -245,7 +245,7 @@ function showSelectedPizza() {
     document.getElementById('pizzaListUl').innerHTML = "<li><p id='idP'>" + selectedPizza.id + ".</p><section id='nameAndIngSection'><p id='nameP'>" + selectedPizza.name + "</p>" +
         "<span id='ingredientsP'>" +
         getIngList(selectedPizza.ingredients) +
-        "</span></section><button class='btn btn-success' type='button'></button><p id='lowerPrizeP" + indexOfPizzaItem + "' class='prizeP'>" +
+        "</span></section><a href='" + selectedPizza.photo + "' data-lightbox='image-1' data-title='Pizza w naszej pizzeri! :)'><button class='btn btn-success' id='buttonPhoto' type='button'></button></a><p id='lowerPrizeP" + indexOfPizzaItem + "' class='prizeP'>" +
         selectedPizza.lowerPrize + " zł</p><input id='lowerInput" + indexOfPizzaItem + "' class='amountLowerInput' type='number' placeholder='szt.' step='1' min='0' value='" + sessionStorage.getItem('jumpLOW' + indexOfPizzaItem + '') + "' /></p>" +
         "<p id='higherPrizeP" + indexOfPizzaItem + "' class='prizeP'>" + selectedPizza.higherPrize + " zł</p><input id='higherInput" + indexOfPizzaItem + "' class='amountHigherInput'" +
         " type='number' placeholder='szt.' step='1' min='0' value='" + sessionStorage.getItem('jumpHIGH' + indexOfPizzaItem + '') + "' /></p></li>";
@@ -337,5 +337,10 @@ for (iterator = 0; iterator < listOfInputs1.length; iterator++) {
 }
 
 var listOfCheckboxes = document.querySelector("input[type=checkbox]");
-
 listOfCheckboxes.addEventListener('change', filterByCheckbox);
+
+function confirmOrder(){
+    window.location.replace("orderPage.html");
+}
+
+document.getElementById('buttonConfirm').addEventListener('click', confirmOrder);
