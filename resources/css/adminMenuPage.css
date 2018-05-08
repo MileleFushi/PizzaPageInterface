@@ -39,6 +39,29 @@ body{
     box-shadow: 2px 4px 5px black;
 }
 
+button{
+    font-size: 17px;
+    font-family: 'Lobster Two' !important;
+    letter-spacing: 1px;
+    padding: 3px 8px 3px 8px;
+    box-shadow: 2px 4px 5px black;
+}
+
+button#idButton{
+    height: 50px;
+    margin-top: -9px;
+    margin-left: 1%;
+    font-size: 31px;
+    padding-top: 0px;
+    background-color: #007941;
+}
+
+button#buttonConfirm{
+    float: right;
+    margin-right: 50px;
+    font-size: 30px;
+}
+
 .navImage{
     display: inline-block;
     cursor: pointer;
@@ -68,6 +91,16 @@ main{
     border-radius: 3%;
     padding-top: 100px;
     padding-bottom: 50px;
+}
+
+section#mainSection{
+    padding-bottom: 150px;
+    padding-top: 160px;
+    margin-top: 40px;
+    background-color: rgb(10, 111, 63);
+    margin-left: 3%;
+    margin-right: 3%;
+    height: auto;
 }
 
 figure.caption{
@@ -114,102 +147,6 @@ figure.captionBehind#thirdCaption{
     margin-bottom: -110px;
 }
 
-#newsSection{
-    height: 400px;
-    overflow-y: scroll;
-    background-color: rgb(14, 161, 93);
-    -webkit-box-shadow: inset 0px 0px 12px black;
-    box-shadow: 0px 0px 12px black;
-    margin: 0px 100px 0px 100px;
-    
-}
-
-.newsArticle{
-    display: block;
-    margin: 50px 100px 50px 100px;
-    padding: 20px;
-    background-color: #00522C;
-    box-shadow: 0px 0px 12px black;
-
-}
-
-.squareArticleImage img{
-    float: left;
-    height: 280px;
-    width: 280px;
-    margin: 0px 20px 0px 0px;
-    background-color: white;
-    padding: 7px;
-    border: 1px solid black;
-}
-
-.newsArticle h1{
-    font-family: 'Lobster Two';
-    letter-spacing: 1px;
-    color: white;
-    font-size: 45px; 
-    text-align: center;
-    margin-bottom: 20px;
-    margin-top: -20px;
-}
-.newsArticle p{
-    font-family: 'PT Serif';
-    color: rgb(183, 228, 207);
-    font-size: 16px;
-}
-
-#articleMoreButton{
-    display: block;
-    float: right;
-    margin: -5px 63px 2px 10px;
-    font-family: 'PT Serif';
-    padding: 3px 8px 3px 8px;
-    box-shadow: 2px 4px 5px black;
-}
-
-#openingHoursSection{
-    display: block;
-    float: left;
-    width: 20%;
-    height: 200px;
-    background-color: rgb(14, 161, 93);
-    box-shadow: 0px 0px 12px black;
-    margin: 50px 50px 100px 100px;
-    padding: 20px;
-}
-
-#openingHoursSection p{
-    font-family: 'PT Serif';
-    color: rgb(183, 228, 207);
-    font-size: 16px;
-}
-
-#aboutUsSection{
-    display: block;
-    height: 300px;
-    width: 60%;
-    background-color: rgb(14, 161, 93);
-    box-shadow: 0px 0px 12px black;
-    margin: 6px 100px 100px 420px;
-    padding: 50px 20px 20px 20px;
-}
-
-#aboutUsSection h1{
-    font-family: 'Lobster Two';
-    letter-spacing: 1px;
-    color: white;
-    font-size: 45px; 
-    text-align: center;
-    margin-bottom: 20px;
-    margin-top: -20px;
-}
-
-#aboutUsSection p{
-    font-family: 'PT Serif';
-    color: rgb(183, 228, 207);
-    font-size: 16px;
-}
-
 footer figure#behindBar{
     height: 100px;
     margin-top: 200px;
@@ -234,10 +171,15 @@ footer section p{
     font-size: 12px;
 }
 
-/* MENUPAGE */
-
 #editMenuSection {
     height: 500px;
+    background-color: rgb(14, 161, 93);
+    box-shadow: inset 0 0 12px #000000;
+    margin: 160px 100px 0px 100px;
+}
+
+#addMenuSection {
+    height: 433px;
     background-color: rgb(14, 161, 93);
     box-shadow: inset 0 0 12px #000000;
     margin: 160px 100px 0px 100px;
@@ -256,235 +198,215 @@ footer section p{
     
 }
 
-* {
-    font-family: 'Almendra', sans-serif;
-}
-
-#buttonConfirm{
-    float: right;
-    margin-top: 160px;
-    margin-right: 5%;
-    font-size: 25px;
-    font-family: 'Lobster Two';
-    letter-spacing: 2px;
-    padding: 8px 25px 8px 25px;
-    box-shadow: 2px 4px 5px black;
-}
-
-section#mainSection{
-    padding-bottom: 150px;
-    padding-top: 160px;
-    margin-top: 40px;
-    background-color: rgb(10, 111, 63);
-    margin-left: 3%;
-    margin-right: 3%;
-}
-
-.autocomplete {
-    /*the container must be positioned relative:*/
-    position: relative;
-    display: inline-block;
-}
-
-input {
-    border: 2px solid transparent;
-    border-radius: 5px;
-    background-color: #f1f1f1;
-    padding: 10px;
-    font-size: 16px;
-}
-
-input[type=text] {
-    background-color: #f1f1f1;
-    width: 100%;
-    font-size: 23px;
-    padding: 7px;
-}
-
-#searchButton {
-    background: url(../img/icoSearch.png);
-    background-position: center center;
-    background-repeat: no-repeat;
-    height: 54px;
-    width: 80px;
-    cursor: pointer;
-    background-color: orange;
-    margin-top: -4px;
-}
-
-.autocomplete-items {
+#addCaptionSection {
     position: absolute;
-    border: 1px solid #d4d4d4;
-    border-bottom: none;
-    border-top: none;
-    z-index: 99;
-    /*position the autocomplete items to be the same width as the container:*/
-    top: 100%;
-    left: 0;
-    right: 0;
-}
-
-.autocomplete-items div {
-    padding: 10px;
-    cursor: pointer;
-    background-color: #fff;
-    border-bottom: 1px solid #d4d4d4;
-}
-
-.autocomplete-items div:hover {
-    /*when hovering an item:*/
-    background-color: #e9e9e9;
-}
-
-.autocomplete-active {
-    /*when navigating through the items using the arrow keys:*/
-    background-color: #FFA00C !important;
-    color: #ffffff;
-}
-
-section#pizzaFilterSection {
-    background-color: #FFA00C;
-    height: 100px;
-    padding-top: 60px;
-    padding-left: 15%;
-    /*box-shadow: inset 0px 0px 12px black,
-    inset -10px 0px 12px black, inset 10px 0px 12px black;*/
-}
-
-section#pizzaFilterSection span {
-    margin-right: 10%;
-    font-size: 20px;
-
-}
-section#formSection ul {
-    list-style-type: none;
-    margin: 25px 5%;
-    padding-left: 0px;
-}
-
-section#titlesSection{
-    background-color: #ffdfc0;
-    font-size: 20px;
-}
-
-section#titlesSection span#lpTitleSpan{
-    margin-left: 7%;
-}
-
-section#titlesSection span#nameTitleSpan{
-    margin-left: 6%;
-}
-
-section#titlesSection span#lowerTitleSpan{
-    margin-left: 55%;
-}
-
-section#titlesSection span#higherTitleSpan{
-    margin-left: 4%;
-}
-
-section#formSection li {
-    background-color: #ffdfc0;
-    margin-bottom: 20px;
+    background-color: rgb(6, 94, 52);
+    width: 35%;
+    height: 80px;
+    padding: 14px 40px;
+    margin-top: -38px;
+    margin-left: 11%;
     border-radius: 5px;
+    box-shadow: 0px 4px 12px black;
+    
 }
 
-section#formSection p{
-    display: inline-block;
-}
-
-section#formSection p#idP{
-    font-size: 81px;
-    margin: -32px 10px;
-    height: 75px;
-    width: 90px;
-}
-
-section#nameAndIngSection{
-    display: inline-block;
-    height: 50px;
-    width: 49%;
-    position: relative;
-}
-
-section#formSection{
-    overflow-y: auto;
-    height: 367px;
-}
-
-section#formSection p#nameP{
-    font-weight: bold;
-    font-size: 20px;
-    margin-bottom: 0px;
-    margin-right: 5px;
-}
-
-section#formSection p#ingredientsP{
-    display: inline-block;
-    font-size: 16px;
-    margin-bottom: 0px;
-}
-
-section#formSection button{
-    display: inline-block;
-    height: 50px;
-    width: 50px;
-    position: relative;
-    top: -12px;
-    margin-left: 12%;
-    margin-right: 5%;
-    background: url(http://imageshack.com/a/img922/2899/SjbW53.png);
-    background-position: center center;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    background-color: orange;
-}
-
-section#formSection input[type=number]{
-    overflow: visible;
-    height: 10px;
-    width: 49px;
-    padding-right: 0px;
-    padding-left: 5px;
-    font-size: 20px;
-    padding-bottom: 13px;
-    margin-left: -5.5%;
-    border: 1px solid green;
-}
-
-p#lowerP{
-    margin-left: 6%;
-}
-
-section#formSection p.prizeP{
-    margin-top: -7px;
-    margin-bottom: 0px;
-    margin-left: 1%;
-    font-size: 23px;
-    width: 50px;
+section#editCaptionSection span{
+    font-family: 'Lobster Two';
+    color: white;
+    font-size: 60px;
+    letter-spacing: 2px;
+    padding: 4px 60px;
+    display: block;
     text-align: center;
-    position: relative;
-    top: -27px;
+    margin-top: -26px;
 }
 
-p#allCostP{
-    font-size: 30px;
-    color: #e9e9e9;
-    margin-top: 35px;
-    margin-left: 4%;
+section#addCaptionSection span{
+    font-family: 'Lobster Two';
+    color: white;
+    font-size: 60px;
+    letter-spacing: 2px;
+    padding: 4px 60px;
+    display: block;
+    text-align: center;
+    margin-top: -26px;
 }
 
-span#allCostSpan{
-    font-size: 40px;
+/* ORDERPAGE */
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:first-child {
+    background: #00522C;
+    color: white;
+    /* to keep IE happy */
+}
+
+tr:last-child {
+    background: rgb(0, 140, 75);
+    color: white;
+    /* to keep IE happy */
+}
+
+section#orderListSection{
+    display: block;
+    float: left;
+    width: 50%;
+    height: 250px;
+    background-color: rgb(14, 161, 93);
+    box-shadow: 0px 0px 12px black;
+    margin: -19px 50px 0px 100px;
+    padding: 20px;
+    overflow-y: auto;
+    font-family: 'PT Serif';
+    color: rgb(183, 228, 207);
+    font-size: 16px;
+}
+
+#commentSection{
+    display: inline-block;
+    float: left;
+    width: 28%;
+    height: 250px;
+    background-color: rgb(14, 161, 93);
+    box-shadow: 0px 0px 12px black;
+    margin: -21px 50px 0px 30px;
+    padding: 35px;
+}
+
+#commentSection p{
+    font-family: 'PT Serif';
+    color: rgb(183, 228, 207);
+    font-size: 16px;
+}
+
+textarea#commentTextArea{
+    width: 100%;
+    height: 190px;
+    padding: 7px 7px;
+    box-sizing: border-box;
+    border: 2px solid green;
+    border-radius: 4px;
+    background-color: #D2F3D8;
+    font-size: 20px;
+    resize: none;
+    color: #004c00;
+    font-family: serif;
+}
+
+#formSection{
+    padding: 80px 40px 20px 28px;
+}
+
+#formSection p{
+    font-family: 'PT Serif';
+    color: rgb(183, 228, 207);
+    font-size: 16px;
+}
+
+input[type=text], select, textarea {
+    width: 67% !important;
+    padding: 12px;
+    border: 1px solid green;
+    border-radius: 4px;
+    resize: vertical;
+    background-color: #d2f3d8;
+    font-size: 20px;
+    font-family: serif;
+}
+
+input, optgroup, select, checkbox, textarea {
+    font-family: serif !important;
+    font-size: 20px !important;
+}
+
+label {
+    padding: 0px 0px 6px 0;
+    font-family: 'Lobster Two';
+    letter-spacing: 1px;
+    color: white;
+    font-size: 35px;
+    text-align: center;
+    margin-left: 8px;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+input[type=checkbox]{
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+
+p#checkboxP{
+    font-family: serif;
+    font-size: 22px;
+    color: white;
+    margin-top: -11px;
+    margin-left: 5px;
+    display: inline-block;
+}
+
+#container {
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
 }
 
 /* Full-width input fields */
 input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin: 0px 0px 10px 0px;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: 1px solid rgb(0, 78, 0);
     box-sizing: border-box;
 }
 
@@ -581,15 +503,4 @@ span.psw {
     .cancelbtn {
        width: 100%;
     }
-}
-
-section#editCaptionSection span{
-    font-family: 'Lobster Two';
-    color: white;
-    font-size: 60px;
-    letter-spacing: 2px;
-    padding: 4px 60px;
-    display: block;
-    text-align: center;
-    margin-top: -26px;
 }

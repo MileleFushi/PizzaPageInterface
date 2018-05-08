@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Ta strona wymaga modyfikacji - dużo nieprawidłowości, duplikowane id -->
 <html lang="en">
 
 <head>
@@ -6,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../resources/css/adminMenuPage.css">
-    
+
     <link href="https://fonts.googleapis.com/css?family=Lobster+Two|Lobster|PT+Serif" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
@@ -22,19 +23,28 @@
 <body onload="startAtMiddlePage(0, 360)">
     <header>
         <nav id="loginBar">
-            <button id="loginButton" type="button" class="btn btn-success">Wyloguj</button>
+            <a href="index.html"><button id="loginOutButton" type="button" class="btn btn-success">Wyloguj</button></a>
         </nav>
 
         <nav="navigationBar">
             <figure id="behindBar">
                 <figure class="navImage" id="menuPageImage">
-                    <a href="menuPage.html"><img onmouseover="this.src='https://imageshack.com/a/img923/4627/v7Y89W.png'" onmouseout="this.src='https://imageshack.com/a/img922/9067/4Iyn6T.png'" src="https://imageshack.com/a/img922/9067/4Iyn6T.png" /></a>
+                    <a href="menuPage.html">
+                        <img onmouseover="this.src='https://imageshack.com/a/img923/4627/v7Y89W.png'" onmouseout="this.src='https://imageshack.com/a/img922/9067/4Iyn6T.png'"
+                            src="https://imageshack.com/a/img922/9067/4Iyn6T.png" />
+                    </a>
                 </figure>
                 <figure class="navImage" id="contactPageImage">
-                    <a href="contactPage.html"><img onmouseover="this.src='https://imageshack.com/a/img924/6415/uhYTAw.png'" onmouseout="this.src='https://imageshack.com/a/img924/2503/LfzF6g.png'" src="https://imageshack.com/a/img924/2503/LfzF6g.png" /></a>
+                    <a href="contactPage.html">
+                        <img onmouseover="this.src='https://imageshack.com/a/img924/6415/uhYTAw.png'" onmouseout="this.src='https://imageshack.com/a/img924/2503/LfzF6g.png'"
+                            src="https://imageshack.com/a/img924/2503/LfzF6g.png" />
+                    </a>
                 </figure>
                 <figure class="logoImage" id="firstLogoImage">
-                    <a href="index.html"><img onmouseover="this.src='https://imageshack.com/a/img923/9097/xFjbx3.png'" onmouseout="this.src='https://imageshack.com/a/img924/7897/Ye9Bm5.png'" src="https://imageshack.com/a/img924/7897/Ye9Bm5.png" /></a>
+                    <a href="index.html">
+                        <img onmouseover="this.src='https://imageshack.com/a/img923/9097/xFjbx3.png'" onmouseout="this.src='https://imageshack.com/a/img924/7897/Ye9Bm5.png'"
+                            src="https://imageshack.com/a/img924/7897/Ye9Bm5.png" />
+                    </a>
                 </figure>
             </figure>
 
@@ -45,18 +55,108 @@
         <section id="mainSection">
             <figure class="captionBehind" id="secondCaption">Panel administracyjny - edytuj menu</figure>
             <figure class="caption" id="secondCaption">Panel administracyjny - edytuj menu</figure>
-            
+
             <section id="editMenuSection">
 
                 <section id="editCaptionSection">
-                        <span>Edytuj menu</span>
+                    <span>Edytuj menu</span>
                 </section>
 
                 <section id="formSection">
-                    <form></form>
+                    <div id="container">
+                        <form action="">
+                            <div class="row">
+                                <div class="col-4">
+                                    <label for="fname">Edytuj produkt o id: </label>
+                                </div>
+                                <div class="col-8">
+                                    <input type="text" id="fname" name="firstname" placeholder="" style="width: 12% !important;">
+                                    <button type="button" id="idButton" class="btn btn-success">ok</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <label for="lname">Nazwa produktu: </label>
+                                </div>
+                                <div class="col-8">
+                                    <input type="text" id="lname" name="lastname" placeholder="Po wybraniu id pojawi się nazwa produktu...">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <label for="lstreet">Składniki: </label>
+                                </div>
+                                <div class="col-8">
+                                    <input type="text" id="lstreet" name="street" placeholder="Po wybraniu id pojawią się składniki...">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <label for="lhousenumber">Cena niższa: </label>
+                                </div>
+                                <div class="col-8">
+                                    <input type="text" id="lhousenumber" name="housenumber" placeholder="" style="width: 12% !important;">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <label for="lhousenumber">Cena wyższa: </label>
+                                </div>
+                                <div class="col-8">
+                                    <input type="text" id="lhousenumber" name="housenumber" placeholder="" style="width: 12% !important;">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+                <button type="button" id="buttonConfirm" class="btn btn-success">Zatwierdź zmiany</button>
+            </section>
+
+            <section id="addMenuSection">
+
+                <section id="addCaptionSection">
+                    <span>Dodaj produkt</span>
                 </section>
 
-                <button type="button" id="buttonConfirm" class="btn btn-success" >Zatwierdź</button>
+                <section id="formSection">
+                    <div id="container">
+                        <form action="">
+                            <div class="row">
+                                <div class="col-4">
+                                    <label for="lname">Nazwa produktu: </label>
+                                </div>
+                                <div class="col-8">
+                                    <input type="text" id="lname" name="lastname" placeholder="Wprowadź nazwę produktu...">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <label for="lstreet">Składniki: </label>
+                                </div>
+                                <div class="col-8">
+                                    <input type="text" id="lstreet" name="street" placeholder="Wprowadź składniki po przecinku...">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <label for="lhousenumber">Cena niższa: </label>
+                                </div>
+                                <div class="col-8">
+                                    <input type="text" id="lhousenumber" name="housenumber" placeholder="" style="width: 12% !important;">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <label for="lhousenumber">Cena wyższa: </label>
+                                </div>
+                                <div class="col-8">
+                                    <input type="text" id="lhousenumber" name="housenumber" placeholder="" style="width: 12% !important;">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+                <button type="button" id="buttonConfirm" class="btn btn-success">Dodaj produkt</button>
             </section>
         </section>
     </main>
@@ -67,9 +167,9 @@
             <img id="secondLogoImage" src="https://imageshack.com/a/img924/2180/WE00gr.png" />
         </figure>
         <section>
-        <p>Designed by Mil Fushi - Małgorzata Zawisza</p>
-        <p>Politechnika Koszalińska 2018</p>
-        <p>Projekt interfejsu graficznego - Grzegorz Górski</p>
+            <p>Designed by Mil Fushi - Małgorzata Zawisza</p>
+            <p>Politechnika Koszalińska 2018</p>
+            <p>Projekt interfejsu graficznego - Grzegorz Górski</p>
         </section>
     </footer>
 
