@@ -75,7 +75,7 @@ figure.caption{
     font-family: 'Lobster';
     letter-spacing: 2px;
     color: white;
-    font-size: 75px;
+    font-size: 69px;
 }
 
 figure.captionBehind{
@@ -83,7 +83,7 @@ figure.captionBehind{
     font-family: 'Lobster';
     letter-spacing: 2px;
     color: #B31414;
-    font-size: 80px;
+    font-size: 70px;
 }
 
 figure.caption#firstCaption{
@@ -102,6 +102,7 @@ figure.caption#secondCaption{
 figure.captionBehind#secondCaption{
     margin-left: 95px;
     margin-bottom: -110px;
+    margin-top: -233px;
 }
 
 figure.caption#thirdCaption{
@@ -239,7 +240,7 @@ footer section p{
     height: 500px;
     background-color: rgb(14, 161, 93);
     box-shadow: inset 0 0 12px #000000;
-    margin: 130px 100px 0px 100px;
+    margin: 160px 100px 0px 100px;
 }
 
 #editCaptionSection {
@@ -261,39 +262,13 @@ footer section p{
 
 #buttonConfirm{
     float: right;
-    margin-top: -67px;
+    margin-top: 160px;
     margin-right: 5%;
-    font-size: 24px;
+    font-size: 25px;
     font-family: 'Lobster Two';
     letter-spacing: 2px;
-    padding: 3px 15px 3px 15px;
+    padding: 8px 25px 8px 25px;
     box-shadow: 2px 4px 5px black;
-}
-
-figure.caption{
-    position: relative;
-    font-family: 'Lobster';
-    letter-spacing: 2px;
-    color: white;
-    font-size: 75px;
-}
-
-figure.captionBehind{
-    position: relative;
-    font-family: 'Lobster';
-    letter-spacing: 2px;
-    color: #B31414;
-    font-size: 80px;
-}
-
-figure.caption#secondCaption{
-    margin-left: 104px;
-    margin-bottom: -85px;
-}
-figure.captionBehind#secondCaption{
-    margin-left: 95px;
-    margin-bottom: -110px;
-    margin-top: -236px;
 }
 
 section#mainSection{
@@ -606,4 +581,15 @@ span.psw {
     .cancelbtn {
        width: 100%;
     }
+}
+
+section#editCaptionSection span{
+    font-family: 'Lobster Two';
+    color: white;
+    font-size: 60px;
+    letter-spacing: 2px;
+    padding: 4px 60px;
+    display: block;
+    text-align: center;
+    margin-top: -26px;
 }
