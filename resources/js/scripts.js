@@ -339,17 +339,9 @@ for (iterator = 0; iterator < listOfInputs1.length; iterator++) {
 var listOfCheckboxes = document.querySelector("input[type=checkbox]");
 listOfCheckboxes.addEventListener('change', filterByCheckbox);
 
-function confirmOrder(){
+function confirmOrder() {
     window.location.replace("orderPage.html");
 }
 
 document.getElementById('buttonConfirm').addEventListener('click', confirmOrder);
 
-var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
