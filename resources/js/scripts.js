@@ -327,6 +327,7 @@ function filterByCheckbox() {
 
 document.getElementById('searchButton').addEventListener('click', showSelectedPizza);
 document.body.addEventListener('load', pizzaList.forEach(showPizzaList));
+
 var listOfInputs1 = document.getElementsByClassName('amountLowerInput');
 var listOfInputs2 = document.getElementsByClassName('amountHigherInput');
 var iterator;

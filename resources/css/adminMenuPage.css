@@ -60,6 +60,7 @@ button#buttonConfirm{
     float: right;
     margin-right: 50px;
     font-size: 30px;
+    margin-top: 20px;
 }
 
 .navImage{
@@ -172,14 +173,14 @@ footer section p{
 }
 
 #editMenuSection {
-    height: 500px;
+    height: auto;
     background-color: rgb(14, 161, 93);
     box-shadow: inset 0 0 12px #000000;
     margin: 160px 100px 0px 100px;
 }
 
 #addMenuSection {
-    height: 433px;
+    height: auto;
     background-color: rgb(14, 161, 93);
     box-shadow: inset 0 0 12px #000000;
     margin: 160px 100px 0px 100px;
@@ -315,7 +316,7 @@ textarea#commentTextArea{
 }
 
 input[type=text], select, textarea {
-    width: 67% !important;
+    width: 78% !important;
     padding: 12px;
     border: 1px solid green;
     border-radius: 4px;
@@ -358,6 +359,18 @@ input[type=checkbox]{
     margin-left: 20px;
 }
 
+input[type=file]{
+    border: 1px solid green;
+    border-radius: 4px;
+    background-color: #d2f3d8;
+    color: #003804;
+    padding: 6px 21px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    height: 50px;
+    width: 78%;
+}
 
 p#checkboxP{
     font-family: serif;

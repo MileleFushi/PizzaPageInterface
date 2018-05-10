@@ -23,7 +23,9 @@
 <body onload="startAtMiddlePage(0, 360)">
     <header>
         <nav id="loginBar">
-            <a href="index.html"><button id="loginOutButton" type="button" class="btn btn-success">Wyloguj</button></a>
+            <a href="index.html">
+                <button id="loginButton" type="button" class="btn btn-success">Wyloguj</button>
+            </a>
         </nav>
 
         <nav="navigationBar">
@@ -67,11 +69,12 @@
                         <form action="">
                             <div class="row">
                                 <div class="col-4">
-                                    <label for="fname">Edytuj produkt o id: </label>
+                                    <label for="fname">Edytuj produkt: </label>
                                 </div>
                                 <div class="col-8">
-                                    <input type="text" id="fname" name="firstname" placeholder="" style="width: 12% !important;">
-                                    <button type="button" id="idButton" class="btn btn-success">ok</button>
+                                    <select id="pizzaSelect">
+                                        <option>&nbsp;</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="row">
@@ -79,7 +82,8 @@
                                     <label for="lname">Nazwa produktu: </label>
                                 </div>
                                 <div class="col-8">
-                                    <input type="text" id="lname" name="lastname" placeholder="Po wybraniu id pojawi się nazwa produktu...">
+                                    <input type="text" id="productNameInput" name="lastname" placeholder="Po wybraniu produktu pojawi się nazwa produktu..."
+                                    />
                                 </div>
                             </div>
                             <div class="row">
@@ -87,7 +91,15 @@
                                     <label for="lstreet">Składniki: </label>
                                 </div>
                                 <div class="col-8">
-                                    <input type="text" id="lstreet" name="street" placeholder="Po wybraniu id pojawią się składniki...">
+                                    <input type="text" id="ingriedientsInput" name="street" placeholder="Po wybraniu produktu pojawią się składniki..." />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <label for="lstreet">Ilustracja: </label>
+                                </div>
+                                <div class="col-8">
+                                    <input type="file" id="photoInput" name="street" accept="image/*"/>
                                 </div>
                             </div>
                             <div class="row">
@@ -95,7 +107,7 @@
                                     <label for="lhousenumber">Cena niższa: </label>
                                 </div>
                                 <div class="col-8">
-                                    <input type="text" id="lhousenumber" name="housenumber" placeholder="" style="width: 12% !important;">
+                                    <input type="text" id="lowerPrizeInput" name="housenumber" placeholder="" style="width: 12% !important;" />
                                 </div>
                             </div>
                             <div class="row">
@@ -103,7 +115,7 @@
                                     <label for="lhousenumber">Cena wyższa: </label>
                                 </div>
                                 <div class="col-8">
-                                    <input type="text" id="lhousenumber" name="housenumber" placeholder="" style="width: 12% !important;">
+                                    <input type="text" id="higherPrizeInput" name="housenumber" placeholder="" style="width: 12% !important;" />
                                 </div>
                             </div>
                         </form>
@@ -135,6 +147,14 @@
                                 </div>
                                 <div class="col-8">
                                     <input type="text" id="lstreet" name="street" placeholder="Wprowadź składniki po przecinku...">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <label for="lstreet">Ilustracja: </label>
+                                </div>
+                                <div class="col-8">
+                                    <input type="file" id="photoInput" name="street" accept="image/*" />
                                 </div>
                             </div>
                             <div class="row">
@@ -175,6 +195,7 @@
 
 
     <script src="../resources/js/scripts.js"></script>
+    <script src="../resources/js/admin-page-selectbox-script.js"></script>
 </body>
 
 </html>
